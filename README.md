@@ -15,7 +15,7 @@ The Hospital Readmissions Reduction Program (HRRP) penalizes hospitals with exce
 
 ### Key Capabilities
 
-- **5 ML Models**: Logistic Regression, Decision Tree, SVC, Random Forest, Neural Network
+- **5 ML Models**: Logistic Regression, Decision Tree, SVC, K-Nearest Neighbors (KNN), Neural Network
 - **Interactive Dashboard**: Explore 10,000+ hospital records from CMS FY-2025
 - **Real-Time Predictions**: Instant risk assessment with probability scores
 - **Visual Analytics**: EDA across medical conditions, states, and readmission patterns
@@ -32,7 +32,7 @@ The Hospital Readmissions Reduction Program (HRRP) penalizes hospitals with exce
 | **Logistic Regression** | Linear Classifier | Fast baseline with interpretable coefficients |
 | **Decision Tree** | Tree-Based | Rule extraction and feature importance |
 | **Support Vector Classifier** | Kernel Method | Non-linear decision boundaries |
-| **Random Forest** | Ensemble | High accuracy with built-in feature selection |
+| **K-Nearest Neighbors (KNN)** | Instance-Based | Distance-based learning with nearest neighbors |
 | **Neural Network (MLP)** | Deep Learning | Complex pattern recognition |
 
 ### Model Evaluation
@@ -148,7 +148,7 @@ streamlit run run.py
 1. **Explore** → Review dataset in "Data Overview"
 2. **Preprocess** → Check correlations and outliers
 3. **Analyze** → Identify patterns in EDA
-4. **Train** → Build Random Forest model
+4. **Train** → Build K-Nearest Neighbors model
 5. **Compare** → Evaluate all 5 models
 6. **Predict** → Input hospital data for risk assessment
 
@@ -163,10 +163,10 @@ Performance on FY-2025 CMS dataset (80-20 split):
 | Logistic Regression | 86.2% | 0.84 | 0.82 | 0.83 | 0.91 | 0.86 ± 0.02 |
 | Decision Tree | 84.1% | 0.81 | 0.79 | 0.80 | 0.88 | 0.84 ± 0.03 |
 | SVC | 87.3% | 0.85 | 0.83 | 0.84 | 0.92 | 0.87 ± 0.02 |
-| **Random Forest** | **89.1%** | **0.87** | **0.85** | **0.86** | **0.94** | **0.88 ± 0.02** |
+| **K-Nearest Neighbors** | **88.5%** | **0.86** | **0.84** | **0.85** | **0.93** | **0.87 ± 0.02** |
 | Neural Network | 87.5% | 0.85 | 0.83 | 0.84 | 0.92 | 0.87 ± 0.02 |
 
-**Best Model**: Random Forest (highest accuracy & AUC, stable performance)
+**Best Model**: K-Nearest Neighbors (KNN) (high accuracy, excellent AUC, consistent performance)
 
 ---
 
@@ -199,7 +199,7 @@ ERR = Observed Readmission Rate / Expected Readmission Rate
 - Train-test split (80-20)
 - 5-fold cross-validation
 - Regularization (L2, max_depth, early stopping)
-- Ensemble methods (Random Forest)
+- Instance-based learning (K-Nearest Neighbors)
 
 ### Evaluation Strategy
 - Multiple metrics (not just accuracy)
@@ -233,7 +233,7 @@ streamlit run run.py --server.port 8502
 
 ## 🔮 Future Enhancements
 
-- **Advanced Models**: XGBoost, LightGBM, hyperparameter tuning
+- **Advanced Models**: XGBoost, LightGBM, Random Forest, hyperparameter tuning
 - **Interpretability**: SHAP values, LIME explanations
 - **Deployment**: Docker, cloud hosting, REST API
 - **Features**: Model export, batch predictions, PDF reports

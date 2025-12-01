@@ -73,7 +73,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import (accuracy_score, precision_score, recall_score, 
                              f1_score, roc_auc_score, confusion_matrix, 
@@ -86,7 +86,7 @@ MODELS = {
     "Logistic Regression": LogisticRegression(max_iter=1000, random_state=42),
     "Decision Tree Classifier": DecisionTreeClassifier(max_depth=10, random_state=42),
     "Support Vector Classifier (SVC)": SVC(kernel='rbf', probability=True, random_state=42),
-    "Random Forest": RandomForestClassifier(n_estimators=100, random_state=42),
+    "K-Nearest Neighbors (KNN)": KNeighborsClassifier(n_neighbors=5),
     "MLP Neural Network": MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000, random_state=42)
 }
 
@@ -364,7 +364,7 @@ def show_model_training():
             <li><b>Logistic Regression:</b> Linear model for binary classification</li>
             <li><b>Decision Tree Classifier:</b> Tree-based model for interpretable decisions</li>
             <li><b>Support Vector Classifier (SVC):</b> Finds optimal separating hyperplane</li>
-            <li><b>Random Forest:</b> Ensemble of decision trees for robust predictions</li>
+            <li><b>K-Nearest Neighbors (KNN):</b> Instance-based learning using nearest data points</li>
             <li><b>MLP Neural Network:</b> Multi-layer perceptron for complex patterns</li>
         </ol>
         <b>Evaluation Metrics:</b>
